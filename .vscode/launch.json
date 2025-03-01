@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/dist/main.js", // Adjust to the entry point of your compiled application
+      "preLaunchTask": "npm: build", // Task to compile TypeScript before launch
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Path where the compiled JS files will be
+      "sourceMaps": true, // Enable source maps for debugging TypeScript
+      "env": {
+        "NODE_ENV": "development" // Optional environment variable
+      },
+      "runtimeArgs": [
+        "--require",
+        "ts-node/register" // Automatically register TypeScript for runtime execution
+      ]
+    }
+  ]
+}
